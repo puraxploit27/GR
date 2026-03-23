@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>GR ASSOCIATES | About Us - Expert Contractors</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefcf5;
+            color: #1e2a2f;
+            line-height: 1.5;
+        }
+
+        :root {
+            --primary: #c17b2e;
+            --primary-dark: #9b5e1f;
+            --secondary: #2c4c3b;
+            --accent: #e9b35f;
+            --light-bg: #f9f6ef;
+            --gray-text: #4a5b5e;
+            --shadow-sm: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+            --shadow-md: 0 20px 30px -12px rgba(0,0,0,0.08);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--secondary);
+        }
+
+        .logo span {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--secondary);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(105deg, #eae3d6 0%, #f3ede3 100%);
+            padding: 3.5rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            font-weight: 800;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: var(--gray-text);
+            max-width: 700px;
+            margin: 0.8rem auto 0;
+        }
+
+        /* About Content */
+        .about-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .about-text {
+            flex: 1.5;
+            min-width: 280px;
+        }
+
+        .about-text h2 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+            color: #2f3e3c;
+        }
+
+        .values-list {
+            flex: 1;
+            background: #fff6ed;
+            border-radius: 28px;
+            padding: 2rem;
+            min-width: 280px;
+        }
+
+        .values-list h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .values-list ul {
+            list-style: none;
+        }
+
+        .values-list li {
+            margin: 1.2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 500;
+        }
+
+        .values-list li i {
+            color: var(--primary);
+            font-size: 1.3rem;
+            width: 1.8rem;
+        }
+
+        /* Mission Vision Section */
+        .mission-vision {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .mv-card {
+            flex: 1;
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #efebe3;
+            transition: transform 0.2s;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .mv-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .mv-card h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .mv-card p {
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        /* Team Section - MIDDLE OF PAGE */
+        .team-section {
+            margin: 4rem 0;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #f9f6ef 0%, #fefcf5 100%);
+            border-radius: 48px;
+        }
+
+        .team-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+        }
+
+        .team-subtitle {
+            text-align: center;
+            color: var(--gray-text);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            width: 260px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid #efebe3;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.15);
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #c17b2e, #e9b35f);
+            border-radius: 100%;
+            margin: 0 auto 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 10px 20px rgba(193, 123, 46, 0.3);
+        }
+
+        .team-card h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        .team-card .position {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .team-card .bio {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            line-height: 1.5;
+        }
+
+        /* Experience Banner */
+        .exp-banner {
+            background: var(--secondary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 32px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .exp-banner h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .exp-banner span {
+            color: var(--accent);
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        /* Stats Section */
+        .stats-wrapper {
+            background: #f0ece3;
+            border-radius: 28px;
+            padding: 2.5rem;
+            margin: 2rem 0 3rem 0;
+        }
+
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: #1e2a2f;
+            color: #ddd9ce;
+            padding: 3rem 0 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: #f3cf93;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ccc7b8;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-contact {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-contact i {
+            color: var(--primary);
+        }
+
+        .footer-copyright {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #3a4a47;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 850px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: white;
+                padding: 1.5rem 0;
+                gap: 1rem;
+                text-align: center;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 0 1.5rem;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-links ul {
+                justify-content: center;
+            }
+            .footer-contact {
+                justify-content: center;
+            }
+            .team-card {
+                width: 100%;
+                max-width: 280px;
+            }
+            .team-section {
+                padding: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <h1>GR <span>ASSOCIATES</span></h1>
+            </div>
+            <div class="menu-toggle" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>About GR ASSOCIATES</h1>
+            <p>Craftsmanship, transparency, and passion for building since 1998</p>
+        </div>
+    </section>
+
+    <!-- About Content - TOP SECTION -->
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Who We Are</h2>
+                <p>GR ASSOCIATES is a full-service contracting firm based in India, specializing in high-end residential, commercial, and infrastructure projects. With a legacy of excellence spanning over 25 years, we combine modern construction techniques with time-tested reliability.</p>
+                <p>Our founder, G.R., established the firm with a vision to redefine quality benchmarks in the construction industry. Today, we are known for on-time delivery, uncompromising safety standards, and collaborative client relationships that stand the test of time.</p>
+                <p>We believe every structure tells a story — let us help craft yours with integrity, innovation, and unwavering attention to detail.</p>
+                <a href="contact.html" class="btn-primary" style="margin-top: 1rem; display: inline-block;">Work With Us <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="values-list">
+                <h3>Our Core Values</h3>
+                <ul>
+                    <li><i class="fas fa-hard-hat"></i> <strong>Safety First</strong> - Zero compromise on site safety</li>
+                    <li><i class="fas fa-handshake"></i> <strong>Integrity</strong> - Transparent communication & fair dealings</li>
+                    <li><i class="fas fa-leaf"></i> <strong>Sustainability</strong> - Eco-friendly construction practices</li>
+                    <li><i class="fas fa-users"></i> <strong>Client-Centric</strong> - Your vision is our mission</li>
+                    <li><i class="fas fa-trophy"></i> <strong>Excellence</strong> - Delivering superior quality every time</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission & Vision Section -->
+    <div class="container">
+        <div class="mission-vision">
+            <div class="mv-card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Our Mission</h3>
+                <p>To deliver exceptional construction solutions that exceed client expectations, while maintaining the highest standards of safety, quality, and environmental responsibility.</p>
+            </div>
+            <div class="mv-card">
+                <i class="fas fa-eye"></i>
+                <h3>Our Vision</h3>
+                <p>To be India's most trusted contracting partner, recognized for innovation, integrity, and transforming spaces that inspire communities.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEADERSHIP TEAM - MIDDLE SECTION (CLEARLY VISIBLE) -->
+    <div class="container">
+        <div class="team-section">
+            <h2>Meet Our Leadership</h2>
+            <p class="team-subtitle">The passionate experts behind every successful project</p>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>NAME</h4>
+                    <div class="position">Founder & CEO</div>
+                    <div class="bio">25+ years in construction management, visionary behind GR ASSOCIATES' growth and excellence.</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h4>NAME</h4>
+                    <div class="position">Project Director</div>
+                    <div class="bio">Expert in large-scale project execution with a focus on timely delivery and quality control.</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h4>NAME</h4>
+                    <div class="position">Chief Architect</div>
+                    <div class="bio">Award-winning architect specializing in sustainable, modern, and innovative designs.</div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>NAME</h4>
+                    <div class="position">Operations Head</div>
+                    <div class="bio">Ensures seamless coordination across all projects and maintains highest client satisfaction.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Banner -->
+    <div class="container">
+        <div class="exp-banner">
+            <h3>25+ Years of <span>Excellence</span></h3>
+            <p>Over two and a half decades of delivering quality construction projects across India</p>
+        </div>
+    </div>
+
+    <!-- Stats Section - BOTTOM SECTION -->
+    <div class="container">
+        <div class="stats-wrapper">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>250+</h3>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat-item">
+                    <h3>150+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Expert Engineers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Client Retention</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>GR ASSOCIATES</h3>
+                    <p>Reliable contracting partner since 2026</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <span><i class="fas fa-phone-alt"></i> +91 XXXXXXXXX</span>
+                    <span><i class="fas fa-envelope"></i> contact@grassociates.com</span>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2026 GR ASSOCIATES — Built with integrity and precision. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+        }
+    </script>
+</body>
+</html>
